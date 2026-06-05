@@ -1,0 +1,21 @@
+<form [formGroup]="form">
+  <h2>ng-select</h2>
+  <ng-select
+    [items]="options"
+    bindLabel="name"
+    bindValue="id"
+    formControlName="ngSelect"
+    (change)="changeNgOutput($event)"
+  ></ng-select>
+  <p>Form control value: {{ stringify(form.controls['ngSelect'].value) }}</p>
+  <p>Change event value: {{ stringify(ngSelectOutput) }}</p>
+
+  <h2>evo-autocomplete</h2>
+  <evo-autocomplete
+    [items]="options"
+    bindLabel="name"
+    bindValue="id"
+    formControlName="evoAutocomplete"
+  ></evo-autocomplete>
+  <p>Form control value: {{ stringify(form.controls['evoAutocomplete'].value) }}</p>
+</form>
